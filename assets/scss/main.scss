@@ -1,0 +1,223 @@
+@import 'partials/layout';
+ 
+a:link,
+a:hover,
+a:focus,
+a:active,
+a:visited{
+    /*color: #bbb;*/
+}
+
+a:hover,
+a:focus,
+a:active {
+    color: #1682F5;
+}
+
+main {
+    position: relative; 
+    margin: 0 auto;
+    width: 960px;
+    background: #fcfcfc;
+    @include clearfix();
+    @include box-shadow(0px 0px 30px 5px #999);
+    
+    @media #{$_968}, #{$_800}, #{$_768} {
+        width: auto;
+    }
+    
+    header {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding: 20px;
+        max-height: 100px;
+        border-bottom: 1px solid #ccc;
+        @include clearfix();
+        
+        @media #{$_968}, #{$_800}, #{$_768} {
+            left: 0;
+            margin-left: 0;
+            width: 100%;
+        }
+        
+        .logo {
+            float: left;
+            max-width: 120px;
+            height: 60px;
+            
+            img {
+                max-height: 100%;
+                max-width: 100%;
+            }
+        }
+        
+        nav {
+            margin: 0 0 0 140px;
+            
+            @media #{$_968}, #{$_800}, #{$_768} {
+                text-align: left;
+            }
+            
+            a {
+                margin: 0 20px 0 0;
+                font-size: 1.8em;
+                line-height: 1.5;
+                
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+    
+    #content {
+        position: relative;
+        padding: 121px 20px 71px 20px;
+        @include clearfix();
+        
+        .app-content-preloader {
+            z-index: 1000;
+        }
+        
+        h1 {
+            margin: 0;
+        }
+        
+        .content-menu {
+            
+            a {
+                font-size: 1.6em;
+                font-weight: bold;
+            }
+            
+        }
+        
+        .content-header {
+            margin-bottom: 20px;
+        }
+        
+        .content-greeting {
+            p {
+                font-size: 1.4em;
+                line-height: 1.4em;
+                color: #333;
+            }
+        }
+        
+        .products-table-container {
+            max-height: 500px;
+            overflow-y: auto;
+        }
+        
+        .products-table.table {
+            
+            th {
+                font-weight: bold;
+                font-size: 1.4em;
+            }
+            
+            td {
+                font-size: 1.2em;
+                cursor: pointer;
+            }
+            
+        }
+        
+        .contacts-list {
+            color: #333;
+            line-height: 2em;
+            
+            .row {
+                margin-bottom: 10px;
+            }
+            
+            .contacts-label {
+                font-size: 1.6em;
+                font-weight: bold;
+                text-align: right;
+            }
+            
+            .contacts-value {
+                font-size: 1.4em;
+            }
+            
+        }
+        
+    }
+    
+    footer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        padding: 10px 2%;
+        left: 0;
+        right: 0;
+        height: 50px;
+        border-top: 1px solid #ccc;
+        @include clearfix();
+        
+        .soc-links {
+            float: left;
+            @include clearfix();
+            
+            a {
+                float: left;
+                margin: 0 20px 0 0;
+                font-size: 2.8em;
+                line-height: 1;
+                
+                &:last-child {
+                    margin-right: 0;
+                }
+                
+                &.fb:hover {
+                    color: #3b5998;
+                }
+                
+                &.tw:hover {
+                    color: #3cf;
+                }
+                
+                &.google-plus:hover {
+                    color: #dd4b39;
+                }
+            }
+            
+        }
+        
+        .author {
+            float: right;
+            font-size: 1.2em;
+            line-height: 30px;
+            color: #bbb;
+        }
+    }
+}
+
+.text {
+    @include border-radius(3px);
+    @include box-shadow(1px 0px 0 $colorLightGray);
+    @include transition;
+    @include apply-origin( 10% 20% 30%, true );
+    @include _insted-hr(#ddd,#eee);
+    @include animation('anim');
+}
+
+.products-form {
+
+    label {
+        font-size: 1.6em;
+    }
+
+}
+
+.form-control {
+    
+    &.ng-invalid {
+        border-color: #a94442; 
+    }
+    
+}

@@ -1,0 +1,33 @@
+<div ng-controller="contactsCtrl">
+    <div class='row content-header'>
+        <div class="col-xs-12">
+            <h1 class='pull-left'>Contacts</h1>
+        </div>
+    </div>
+    <div class="contacts-list">
+        <div class="row">
+            <div class="col-xs-2 contacts-label">
+                E-mail
+            </div>
+            <div class="col-xs-10 contacts-value">
+                <a href="mailto:{{contacts.email}}">{{contacts.email}}</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-2 contacts-label">
+                Address
+            </div>
+            <div class="col-xs-10 contacts-value">
+                {{contacts.address}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-2 contacts-label">
+                Phone
+            </div>
+            <div class="col-xs-10 contacts-value">
+                {{contacts.phone}}
+            </div>
+        </div>
+    </div>
+</div>

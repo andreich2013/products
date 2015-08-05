@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <base href="/" />
+        <title>Products view</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+
+        <link rel="stylesheet" type="text/css" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+
+        <script src="/bower_components/jquery/jquery.min.js"></script>
+        <script src="/bower_components/angular/angular.min.js"></script>
+        <script src="/bower_components/angular-collection/angular-collection.min.js"></script>
+        <script src="/bower_components/angular-animate/angular-animate.min.js"></script>
+        <script src="/bower_components/angular-route/angular-route.min.js"></script>
+        <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    </head>
+    <body ng-controller="appCtrl">
+        <div class="page-preloader"></div>
+        <main>
+            <header>
+                <a href="/" class="logo" data-inside="true">
+                    <img src="/assets/img/logo.jpg" alt="">
+                </a>
+            </header>
+            <div id="content">
+                <div class="app-content-preloader" style="display: none;"></div>
+                <div id="app-content" class="container-fluid">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <nav class="list-group content-menu">
+                                <a class="list-group-item" 
+                                   ng-class="{'active': routeName === 'home'}" 
+                                   href="/">Home</a>
+                                <a class="list-group-item"
+                                    ng-class="{'active': routeName === 'products'}" 
+                                   href="/products">Products</a>
+                                <a class="list-group-item"
+                                   ng-class="{'active': routeName === 'contacts'}" 
+                                   href="/contacts">Contacts</a>
+                            </nav>
+                        </div>
+                        <ng-view class="col-xs-9"></ng-view>
+                    </div>
+                </div>
+            </div>
+            <footer>
+                <div class="soc-links">
+                    <a href="javascript:void(0);" class="fb">
+                        <i class="fa fa-facebook-square"></i>
+                    </a>
+                    <a href="javascript:void(0);" class="tw">
+                        <i class="fa fa-twitter-square"></i>
+                    </a>
+                    <a href="javascript:void(0);" class="google-plus">
+                        <i class="fa fa-google-plus-square"></i>
+                    </a>
+                </div>
+                <div class="author">
+                    &copy; All rights reserved
+                </div>
+            </footer>
+        </main>
+
+        <script src="/app/main.js"></script>
+        <script src="/app/app.js"></script>
+        <script src="/app/appCtrl.js"></script>
+        <script src="/app/404/ctrl.js"></script>
+        <script src="/app/home/ctrl.js"></script>
+        <script src="/app/contacts/ctrl.js"></script>
+        <script src="/app/products/collection.js"></script>
+        <script src="/app/products/list/ctrl.js"></script>
+        <script src="/app/products/item/ctrl.js"></script>
+        <script src="/app/products/create/ctrl.js"></script>
+    </body>
+</html>
+
+
+
+
+

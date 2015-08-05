@@ -1,0 +1,82 @@
+/*==============================MEDIAQUERIES==================================*/
+
+@media #{$_1920} {
+    .desktop-hidden {
+        display: none !important;
+    }
+}
+
+@media #{$_1600} {
+    .desktop-hidden {
+        display: none !important;
+    }
+}
+
+@media #{$_1440} {
+    .desktop-hidden {
+        display: none !important;
+    }
+}
+
+@media #{$_1366} {
+    .desktop-hidden {
+        display: none !important;
+    }
+}
+
+@media #{$_1280} {
+    .desktop-hidden {
+        display: none !important;
+    }
+}
+
+@media #{$_1024} {
+    .desktop-hidden {
+        display: none !important;
+    }
+}
+
+@media #{$_968} {
+    .tablet-hidden {
+        display: none !important;
+    }
+}
+
+@media #{$_800} {
+    .tablet-hidden {
+        display: none !important;
+    }
+}
+
+@media #{$_768} {
+    .tablet-hidden {
+        display: none !important;
+    }
+}
+
+@media #{$mobile} {
+    .tablet-hidden,
+    .desktop-hidden {
+        display: block !important;
+    }
+    .mobile-hidden,
+    .mobile-hidden.desktop-hidden,
+    .mobile-hidden.tablet-hidden,
+    .mobile-hidden.desktop-hidden.tablet-hidden {
+        display: none !important;
+    }
+}
+
+@media #{$ipad} {
+    .tablet-hidden {
+        display: none !important;
+    }
+}
+
+@media #{$mobileLandscape} {
+    
+}
+
+@media #{$mobilePortrait} {
+     
+}

@@ -1,0 +1,82 @@
+//================================+MIXINS=======================================
+
+//problems with compile in netbeans
+//@mixin _font-face($fontName, $fontFile) {
+//    @include font-face($fontName, font-files($fontFile + ".woff", $fontFile + ".ttf", $fontFile + ".svg"), $fontFile + ".eot");
+//}
+
+@mixin _font-face($fontName, $fontFile) { 
+    @font-face {
+        font-family: $fontName;
+        src: 'url("#{$fontFile}.eot")';
+        src: 'url("#{$fontFile}.eot?#iefix")' format('embedded-opentype');
+              src: local("#{$fontName}"),
+             url("#{$fontFile}.ttf") format('truetype'),
+             url("#{$fontFile}.woff") format('woff'),
+             url("#{$fontFile}.svg##{$fontName}") format('svg');
+    }
+}
+
+@mixin _insted-hr($colorTop,$colorBottom){
+    border-top: 1px solid $colorTop;
+    border-bottom: 1px solid $colorBottom;
+}
+    
+@function get-text-border-for-zero ($number, $color) {
+ 
+    $res: '';
+    
+    $res: $res + '#{$number}px 0px 0 #{$color},';
+    $res: $res + '#{$number}px -#{$number}px 0 #{$color},';
+    $res: $res + '#{$number}px #{$number}px 0 #{$color},';
+    $res: $res + '-#{$number}px 0px 0 #{$color},';
+    $res: $res + '-#{$number}px -#{$number}px 0 #{$color},';
+    $res: $res + '-#{$number}px #{$number}px 0 #{$color},';
+    $res: $res + '0px 0px 0 #{$color},';
+    $res: $res + '0px -#{$number}px 0 #{$color},';
+    $res: $res + '0px #{$number}px 0 #{$color},';
+    
+    @return $res;
+}
+
+@function get-text-border-for-nonZero ($more, $less, $color) {
+    
+    $res: '';
+    
+    $res: $res + '#{$more}px #{$less}px 0 #{$color},';
+    $res: $res + '#{$more}px -#{$less}px 0 #{$color},';
+    $res: $res + '-#{$more}px #{$less}px 0 #{$color},';
+    $res: $res + '-#{$more}px -#{$less}px 0 #{$color},';
+    $res: $res + '#{$less}px #{$more}px 0 #{$color},';
+    $res: $res + '#{$less}px -#{$more}px 0 #{$color},';
+    $res: $res + '-#{$less}px #{$more}px 0 #{$color},';
+    $res: $res + '-#{$less}px -#{$more}px 0 #{$color},';
+    
+    @return $res;
+}
+
+@mixin text-border ($color, $width) {
+    
+    $textShadow: '';
+    
+    @for $i from 1 through $width {
+        
+        $to: $i;
+        
+        @for $j from 0 to $to {
+            
+            @if $j == 0  {
+                $textShadow: $textShadow + get-text-border-for-zero($i, $color);
+            } @else {
+                $textShadow: $textShadow + get-text-border-for-nonZero($j + 1, $j, $color);
+            }
+
+         }
+         
+    }
+    
+    $textShadow: str-extract($textShadow, 0, str-length($textShadow) - 1);
+    
+    text-shadow: #{$textShadow};
+    
+}

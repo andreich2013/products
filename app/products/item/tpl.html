@@ -1,0 +1,29 @@
+<div ng-controller="products.itemCtrl">
+    <div class="container-fluid">
+        <div class='row content-header'>
+            <h1 class='pull-left'>Product</h1>
+            <div class="pull-right">
+                <button class="btn btn-default" ng-click='goTo("/products")'>Back</button>
+                <button class="btn btn-primary" ng-click='editItem()'>Edit</button>
+            </div>
+        </div>
+        <div class="contacts-list">
+            <div class="row">
+                <div class="col-xs-2 contacts-label">Title</div>
+                <div class="col-xs-10 contacts-value">{{item.title}}</div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2 contacts-label">Brand</div>
+                <div class="col-xs-10 contacts-value">{{item.brand}}</div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2 contacts-label">Category</div>
+                <div class="col-xs-10 contacts-value">{{item.category}}</div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2 contacts-label">Price</div>
+                <div class="col-xs-10 contacts-value">{{item.price | currency:"$"}}</div>
+            </div>
+        </div>
+    </div>
+</div>
